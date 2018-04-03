@@ -9,20 +9,19 @@ url="https://github.com/oneshot17/getpid.git"
 source=("https://github.com/OneShot17/getpid/archive/1.tar.gz")
 md5sums=('f8970a6e85543544c2da9c7dc5e658b6')
 
-function pkgver() {
-    return 1
-}
-
 # does nothing
 function prepare() {
+    echo "it's done"
     return
 }
 
 function build() {
+    cd getpid-1
     make getpid
 }
 
 # does nothing
 function package() {
+    echo "packaged"
     return
 }
