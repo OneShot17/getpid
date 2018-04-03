@@ -7,21 +7,18 @@ pkgrel=1
 arch=(any)
 url="https://github.com/oneshot17/getpid.git"
 source=("https://github.com/OneShot17/getpid/archive/1.tar.gz")
-md5sums=('f8970a6e85543544c2da9c7dc5e658b6')
-
-# does nothing
-function prepare() {
-    echo "it's done"
-    return
-}
+md5sums=('6f61c7aa64b69ae95b44bd2f70e51adb')
 
 function build() {
     cd getpid-1
     make getpid
 }
 
-# does nothing
 function package() {
-    echo "packaged"
+
+    mkdir $pkgdir/usr
+    mkdir $pkgdir/usr/bin
+    cp getpid-1/getpid $pkgdir/usr/bin/
+    
     return
 }
